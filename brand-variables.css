@@ -1,0 +1,87 @@
+/* Lean.x Brand Design System - CSS Variables */
+/* Extracted from Lean.x website screenshot */
+
+:root {
+    /* ========================================
+       COLOR PALETTE
+       ======================================== */
+    
+    /* Brand Colors */
+    --lean-purple: #8479b2;       /* Hero CTA, Footer Top */
+    --lean-teal: #5bc2c6;         /* Footer Bottom, Register CTA */
+    --lean-yellow: #fdd056;       /* Secondary CTA (Developer/Contact) */
+    --lean-orange: #ff9f43;       /* Logo Accent */
+    
+    /* Text Colors */
+    --lean-text-dark: #3d3d3d;    /* Headings */
+    --lean-text-body: #757575;    /* Body Text */
+    --lean-text-light: #ffffff;   /* Text on colored backgrounds */
+    
+    /* Backgrounds */
+    --lean-bg-white: #ffffff;
+    --lean-bg-light: #f8f9fa;
+    
+    /* Functional Mappings */
+    --bs-primary: var(--lean-purple);
+    --bs-secondary: var(--lean-teal);
+    --bs-accent: var(--lean-yellow);
+    --bs-body-color: var(--lean-text-body);
+    --bs-heading-color: var(--lean-text-dark);
+    
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    
+    /* Font Families */
+    --bs-font-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    
+    /* Typography Settings */
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.6;
+    
+    /* ========================================
+       UI COMPONENTS
+       ======================================== */
+    
+    /* Buttons */
+    --btn-border-radius: 50px; /* Pill shape */
+    --btn-padding-y: 0.75rem;
+    --btn-padding-x: 2rem;
+    
+    /* Gradients/Effects */
+    --footer-gradient: linear-gradient(to bottom, var(--lean-purple) 0%, var(--lean-purple) 50%, var(--lean-teal) 50%, var(--lean-teal) 100%);
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--bs-body-font-family);
+    color: var(--bs-body-color);
+    background-color: var(--lean-bg-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--bs-heading-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Button Base Class */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    border-radius: var(--btn-border-radius);
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+}
