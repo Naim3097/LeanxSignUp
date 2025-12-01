@@ -21,6 +21,92 @@
             flex-direction: column;
         }
 
+        /* Header Navigation */
+        .header {
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 45px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--lean-text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--lean-purple);
+        }
+
+        .btn-nav-signup {
+            background-color: var(--lean-purple);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(132, 121, 178, 0.3);
+        }
+
+        .btn-nav-signup:hover {
+            background-color: #7368a3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(132, 121, 178, 0.4);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--lean-text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+        }
+
         /* Layout Container */
         .signup-wrapper {
             display: flex;
@@ -211,6 +297,20 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <img src="assets/Logos/LeanX Logo.png" alt="Lean.x" class="logo">
+            <button class="mobile-menu-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="browse.html">Browse</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#library">Library</a></li>
+                <li><a href="https://leanx-sign-up.vercel.app/" class="btn-nav-signup">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="signup-wrapper">
         <!-- SECTIONS 1 & 2: Hero + Benefits (Left Side) -->
@@ -271,5 +371,12 @@
         </div>
     </div>
 
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.nav-menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
